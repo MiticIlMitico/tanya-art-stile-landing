@@ -1,5 +1,5 @@
 import React from 'react';
-import { Feather, Camera, Brush } from 'lucide-react';
+import { Feather } from 'lucide-react';
 
 export default function Story() {
   return (
@@ -8,8 +8,8 @@ export default function Story() {
         
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
           
-          {/* Left Column: Real Photo of Tania */}
-          <div className="lg:col-span-5 relative">
+          {/* Photo Column: Order-2 on mobile (below text), Order-1 on desktop (left) */}
+          <div className="lg:col-span-5 relative order-2 lg:order-1">
             <div className="relative w-full aspect-[3/4] max-w-md mx-auto bg-stone-900 shadow-card border border-stone-300 overflow-hidden group">
               <img
                 src="/tanya_photos/tanya_profilo_specchio.jpg"
@@ -43,8 +43,8 @@ export default function Story() {
             </div>
           </div>
 
-          {/* Right Column: First Person Story */}
-          <div className="lg:col-span-7 space-y-5">
+          {/* Text Column: Order-1 on mobile (above photo), Order-2 on desktop (right) */}
+          <div className="lg:col-span-7 space-y-5 order-1 lg:order-2">
             
             <div className="tag-kicker">
               <Feather className="w-4 h-4" />
