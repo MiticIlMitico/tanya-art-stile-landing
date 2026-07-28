@@ -1,63 +1,112 @@
 import React, { useState } from 'react';
-import { ExternalLink, Tag, Sparkles, Eye, MessageCircle } from 'lucide-react';
+import { Tag, Sparkles, Eye, MessageCircle } from 'lucide-react';
 
 export default function Gallery({ onSelectProduct }) {
   const [filter, setFilter] = useState('Tutti');
 
   const products = [
+    // Real Tania Clothing Products
     {
       id: 1,
-      title: 'Giacca "Aura Gold" Custom',
+      title: 'Giacca Sartoriale "Aura Gold"',
       category: 'Alta Moda',
       price: '340 €',
-      image: '/products/jacket_aura.png',
-      tag: 'Creazione #001',
-      description: 'Giacca strutturata in cotone biologico dipinta da me a mano con pigmenti permanenti DEKA e sfumature metalliche oro bronzato. Mio certificato autografo.',
+      image: '/real_products/prodotto_1.jpg',
+      tag: 'Pezzo Unico #001',
+      description: 'Capo d\'alta moda in cotone pesante dipinto a mano con pennellate d\'oro e pigmenti permanenti DEKA. Certificato d\'autenticità autografo firmato da Tetyana Husyeva.',
     },
     {
       id: 2,
-      title: 'Abito da Sera "Seta & Ombra"',
+      title: 'Abito Cromatico "Ombra & Luce"',
       category: 'Alta Moda',
-      price: '390 €',
-      image: '/products/dress_gold.png',
-      tag: 'Creazione #002',
-      description: 'Abito fluido in pura seta dipinto a pennello libero con ampie volute oro ed essenza cromatica scura. Opera d\'alta moda irripetibile.',
+      price: '380 €',
+      image: '/real_products/prodotto_2.jpg',
+      tag: 'Pezzo Unico #002',
+      description: 'Creazione esclusiva dipinta a mano con motivi artistici fluidi a forte spessore materico. Capo numerato d\'Atelier.',
     },
     {
       id: 3,
-      title: 'Felpa Hoodie "Canvas Noir"',
+      title: 'Capo Sculptural Couture (Fronte & Retro)',
       category: 'Alta Moda',
-      price: '240 €',
-      image: '/products/hoodie_canvas.png',
-      tag: 'Creazione #003',
-      description: 'Felpa pesante oversize in cotone egiziano con tratti calligrafici ad alto spessore materico e spruzzi di pigmento dorato. Serie numerata.',
+      price: '390 €',
+      image: '/real_products/prodotto_3_front.jpg',
+      altImage: '/real_products/prodotto_3_back.jpg',
+      tag: 'Pezzo Unico #003',
+      description: 'Opera sartoriale a due facce dipinta sul fronte e sul retro con composizioni cromatiche e dettagli in foglia d\'oro genuina.',
     },
     {
       id: 4,
-      title: 'Borsa "Lumina" in Pelle Dipinta',
-      category: 'Quadri & Accessori',
-      price: '280 €',
-      image: '/products/bag_accessory.png',
-      tag: 'Creazione #004',
-      description: 'Borsa a mano in pelle di vitello beige impreziosita dalle mie pennellate a forte rilevanza materica. Pezzo d\'autore unico.',
+      title: 'Camicia / Top "Fine Art Gold"',
+      category: 'Alta Moda',
+      price: '260 €',
+      image: '/real_products/prodotto_4.jpg',
+      tag: 'Pezzo Unico #004',
+      description: 'Creazione in cotone biologico dipinta a pennello libero con pigmento metallico d\'oro bronzato. Pezzo d\'autore numerato.',
     },
     {
       id: 5,
-      title: 'Quadro "Abstract Fusion N.1"',
-      category: 'Quadri & Accessori',
-      price: '350 €',
-      image: '/products/canvas_painting.png',
-      tag: 'Opera Originale',
-      description: 'Mia opera pittorica originale su tela grande formato (120x120cm) realizzata con foglia d\'oro genuina e pigmento acrilico nero.',
+      title: 'Abito Sartoriale "Atelier Line"',
+      category: 'Alta Moda',
+      price: '320 €',
+      image: '/real_products/prodotto_5.jpg',
+      tag: 'Pezzo Unico #005',
+      description: 'Capo sartoriale unico impreziosito da motivi calligrafici originali stesi a mano nel laboratorio di Reggio Calabria.',
     },
+
+    // Real Tania Paintings (Quadri su Tela)
     {
       id: 6,
-      title: 'Dettaglio Texture "Atelier Stroke"',
-      category: 'Alta Moda',
-      price: '220 €',
-      image: '/assets/hero_brushstroke.png',
-      tag: 'Creazione #005',
-      description: 'Studio di pennellata macro su tessuto organico. Capo da collezione numerato direttamente dal mio laboratorio TANYA Art Stile.',
+      title: 'Quadro "Essenza CROMATICA N.1"',
+      category: 'Quadri su Tela',
+      price: '350 €',
+      image: '/real_quadri/quadro_1.jpg',
+      tag: 'Opera Originale',
+      description: 'Opera pittorica originale su tela realizzata da Tetyana Husyeva con pigmenti acrilici, tratti materici e foglia d\'oro genuina.',
+    },
+    {
+      id: 7,
+      title: 'Quadro "Armonia d\'Atelier N.2"',
+      category: 'Quadri su Tela',
+      price: '320 €',
+      image: '/real_quadri/quadro_2.jpg',
+      tag: 'Opera Originale',
+      description: 'Dipinto su tela formato galleria caratterizzato da ampie spatolate di colore e contrasto dorato. Pezzo unico firmato dall\'artista.',
+    },
+    {
+      id: 8,
+      title: 'Quadro "Visione Astratta N.3"',
+      category: 'Quadri su Tela',
+      price: '390 €',
+      image: '/real_quadri/quadro_3.jpg',
+      tag: 'Opera Originale',
+      description: 'Composizione astratta contemporanea dipinta a mano nel laboratorio di pittura di Tetyana Husyeva a Reggio Calabria.',
+    },
+    {
+      id: 9,
+      title: 'Quadro "Tratto Materico N.4"',
+      category: 'Quadri su Tela',
+      price: '290 €',
+      image: '/real_quadri/quadro_4.jpg',
+      tag: 'Opera Originale',
+      description: 'Studio d\'arte su tela con stratificazioni cromatiche dense e riflessi cromatici dorati. Firmato in calce dall\'artista.',
+    },
+    {
+      id: 10,
+      title: 'Quadro "Ombra e Luce N.5"',
+      category: 'Quadri su Tela',
+      price: '360 €',
+      image: '/real_quadri/quadro_5.jpg',
+      tag: 'Opera Originale',
+      description: 'Dipinto originale d\'autore con contrasti profondi ed elementi d\'arte informale. Certificato di autenticità autografo incluso.',
+    },
+    {
+      id: 11,
+      title: 'Quadro "Riflesso d\'Oro N.6"',
+      category: 'Quadri su Tela',
+      price: '400 €',
+      image: '/real_quadri/quadro_6.jpg',
+      tag: 'Opera Originale',
+      description: 'Opera su tela di grande presenza visiva impreziosita da dettagli in foglia d\'oro genuina e firmata di pugno da Tetyana Husyeva.',
     },
   ];
 
@@ -74,22 +123,21 @@ export default function Gallery({ onSelectProduct }) {
         <div className="text-center max-w-3xl mx-auto mb-10">
           <div className="tag-kicker justify-center">
             <Sparkles className="w-3.5 h-3.5" />
-            <span>Portfolio Opere</span>
+            <span>Portfolio Ufficiale</span>
           </div>
 
           <h2 className="font-serif text-3xl sm:text-4xl font-bold text-gallery-900 leading-tight mb-3">
-            Le Mie Creazioni d'Autore
+            Le Mie Creazioni & Quadri d'Autore
           </h2>
 
           <p className="body-text max-w-xl mx-auto">
-            Ogni pezzo è numerato, dipinto interamente da me ed unico al mondo. 
-            Esplora le mie creazioni d'alta moda e le mie opere d'arte visiva su tela.
+            Ogni pezzo è numerato, dipinto interamente da me nel mio atelier a Reggio Calabria ed unico al mondo.
           </p>
         </div>
 
         {/* Filter Tabs */}
         <div className="flex flex-wrap justify-center items-center gap-2 mb-12">
-          {['Tutti', 'Alta Moda', 'Quadri & Accessori'].map((tab) => (
+          {['Tutti', 'Alta Moda', 'Quadri su Tela'].map((tab) => (
             <button
               key={tab}
               onClick={() => setFilter(tab)}

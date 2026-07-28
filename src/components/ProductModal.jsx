@@ -1,9 +1,10 @@
-import React from 'react';
-import { X, ExternalLink, Tag, ShieldCheck, Sparkles, CheckCircle2, MessageCircle } from 'lucide-react';
+import React, { useState } from 'react';
+import { X, Tag, ShieldCheck, Sparkles, CheckCircle2, MessageCircle } from 'lucide-react';
 
 export default function ProductModal({ product, onClose }) {
   if (!product) return null;
 
+  const [activeImage, setActiveImage] = useState(product.image);
   const whatsappMessage = encodeURIComponent(`Ciao Tanya, vorrei informazioni sulla creazione "${product.title}" (${product.price}).`);
 
   return (
@@ -22,9 +23,9 @@ export default function ProductModal({ product, onClose }) {
         </button>
 
         {/* Product Image Side */}
-        <div className="w-full md:w-1/2 relative bg-stone-900 min-h-[300px] md:min-h-[450px]">
+        <div className="w-full md:w-1/2 relative bg-stone-900 min-h-[300px] md:min-h-[450px] flex flex-col justify-between">
           <img
-            src={product.image}
+            src={activeImage}
             alt={product.title}
             className="w-full h-full object-cover"
           />
@@ -32,6 +33,28 @@ export default function ProductModal({ product, onClose }) {
             <Tag className="w-3.5 h-3.5 text-gold-honey" />
             <span>{product.tag}</span>
           </div>
+
+          {/* Alternate View Switcher if available (e.g. Prodotto 3 Fronte/Retro) */}
+          {product.altImage && (
+            <div className="absolute bottom-4 left-4 right-4 flex gap-2 justify-center bg-black/60 p-2 backdrop-blur-sm">
+              <button
+                onClick={() => setActiveImage(product.image)}
+                className={`px-3 py-1 text-[10px] uppercase tracking-widest font-semibold transition-colors ${
+                  activeImage === product.image ? 'bg-gold-honey text-gallery-900' : 'bg-white/20 text-white'
+                }`}
+              >
+                Fronte
+              </button>
+              <button
+                onClick={() => setActiveImage(product.altImage)}
+                className={`px-3 py-1 text-[10px] uppercase tracking-widest font-semibold transition-colors ${
+                  activeImage === product.altImage ? 'bg-gold-honey text-gallery-900' : 'bg-white/20 text-white'
+                }`}
+              >
+                Retro
+              </button>
+            </div>
+          )}
         </div>
 
         {/* Product Info Side */}

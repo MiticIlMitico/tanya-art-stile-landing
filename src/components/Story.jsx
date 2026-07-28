@@ -1,5 +1,5 @@
 import React from 'react';
-import { Camera, Feather, Award, Heart } from 'lucide-react';
+import { Feather, Camera, Brush } from 'lucide-react';
 
 export default function Story() {
   return (
@@ -8,35 +8,42 @@ export default function Story() {
         
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
           
-          {/* Left Column: Artist Portrait Box */}
-          <div className="lg:col-span-5">
-            <div className="relative w-full aspect-[3/4] max-w-md mx-auto bg-stone-900 shadow-card border border-stone-300 overflow-hidden">
-              <div 
-                className="absolute inset-0 bg-cover bg-center filter blur-lg scale-110 opacity-70"
-                style={{ backgroundImage: `url('/assets/hero_brushstroke.png')` }}
-              ></div>
+          {/* Left Column: Real Photo of Tania */}
+          <div className="lg:col-span-5 relative">
+            <div className="relative w-full aspect-[3/4] max-w-md mx-auto bg-stone-900 shadow-card border border-stone-300 overflow-hidden group">
+              <img
+                src="/tanya_photos/tanya_profilo_specchio.jpg"
+                alt="Ritratto di Tetyana Husyeva (Tanya)"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-gallery-900/80 via-transparent to-transparent"></div>
               
-              <div className="absolute inset-0 bg-gallery-900/80 backdrop-blur-md flex flex-col items-center justify-center p-6 text-center border border-white/10">
-                <div className="w-14 h-14 rounded-full bg-gold-bronze/20 border border-gold-bronze flex items-center justify-center mb-4">
-                  <Camera className="w-6 h-6 text-gold-honey" />
-                </div>
-                
-                <span className="font-script text-3xl text-gallery-50 mb-1">
+              <div className="absolute bottom-5 left-5 right-5 text-gallery-50">
+                <span className="font-script text-3xl text-gold-honey block mb-0.5">
                   Tetyana Husyeva
                 </span>
-                
-                <span className="text-xs uppercase tracking-widest text-gold-honey font-semibold mb-3">
-                  Nel Mio Atelier
+                <span className="text-[10px] uppercase tracking-widest text-stone-300 block font-medium">
+                  Stilista & Pittrice Autodidatta
                 </span>
+              </div>
+            </div>
 
-                <p className="text-xs text-stone-300 font-light leading-relaxed max-w-xs">
-                  A Reggio Calabria tra pigmenti, tessuti in cotone biologico e tele in lavorazione.
-                </p>
+            {/* Overlapping Small Photo: Tania's hand painting */}
+            <div className="hidden sm:block absolute -bottom-6 -right-4 w-44 h-44 border-4 border-gallery-50 shadow-xl overflow-hidden rounded-sm bg-stone-900">
+              <img
+                src="/tanya_photos/mano_tanya_dipinge.jpg"
+                alt="Mano di Tania che dipinge la materia"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gallery-900/30 flex items-center justify-center p-2 text-center">
+                <span className="text-[9px] uppercase tracking-widest text-white font-semibold bg-black/60 px-2 py-1">
+                  100% Fatto a Mano
+                </span>
               </div>
             </div>
           </div>
 
-          {/* Right Column: First Person Portfolio Story */}
+          {/* Right Column: First Person Story */}
           <div className="lg:col-span-7 space-y-5">
             
             <div className="tag-kicker">
@@ -76,7 +83,7 @@ export default function Story() {
                   Tetyana Husyeva
                 </span>
                 <span className="text-[10px] uppercase tracking-widest text-stone-500 font-medium">
-                  Stilista & Pittrice Autodidatta
+                  Atelier Reggio Calabria
                 </span>
               </div>
 

@@ -16,7 +16,7 @@ export default function Hero() {
         {/* Main Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
           
-          {/* Left Text Column (First Person Portfolio Voice) */}
+          {/* Left Text Column */}
           <div className="lg:col-span-7 space-y-6">
             
             <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-gallery-900 leading-tight">
@@ -38,12 +38,10 @@ export default function Hero() {
               </a>
 
               <a
-                href="https://store.tanyaartstile.com"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="#contatti"
                 className="btn-outline"
               >
-                <span>Collezione Esclusiva</span>
+                <span>Contattami in Atelier</span>
                 <ExternalLink className="w-4 h-4 text-stone-500" />
               </a>
             </div>
@@ -72,18 +70,18 @@ export default function Hero() {
 
           </div>
 
-          {/* Right Visual Image Column */}
+          {/* Right Column: Real Photo of Tania Painting */}
           <div className="lg:col-span-5">
             <div className="relative w-full aspect-[4/5] max-w-md mx-auto bg-stone-900 shadow-card border border-stone-200 overflow-hidden group">
               <img
-                src="/assets/hero_brushstroke.png"
-                alt="Dettaglio pennellata - Atelier Tetyana Husyeva"
+                src="/tanya_photos/tanya_che_dipinge.jpg"
+                alt="Tania (Tetyana Husyeva) mentre dipinge nel suo laboratorio"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-gallery-900/80 via-transparent to-transparent"></div>
               <div className="absolute bottom-5 left-5 right-5 text-white">
                 <span className="text-[10px] uppercase tracking-widest text-gold-honey font-semibold block mb-1">
-                  Nel Mio Atelier
+                  Nel Mio Atelier a Reggio Calabria
                 </span>
                 <p className="font-serif italic text-base text-gallery-50">
                   "Ogni mia pennellata veste l'anima."

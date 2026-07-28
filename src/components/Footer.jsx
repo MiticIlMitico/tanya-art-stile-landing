@@ -1,5 +1,11 @@
 import React from 'react';
-import { ArrowUp, Instagram, Video, ShieldCheck, Phone, Mail, MapPin, MessageCircle } from 'lucide-react';
+import { ArrowUp, Instagram, ShieldCheck, Phone, Mail, MapPin, MessageCircle } from 'lucide-react';
+
+const TikTokIcon = ({ className = "w-4 h-4" }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="currentColor">
+    <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 1 1-2.89-2.89c.35 0 .68.06 1 .17V9.47a6.34 6.34 0 0 0-1-.08 6.34 6.34 0 1 0 6.34 6.34V8.71a8.28 8.28 0 0 0 4.77 1.48V6.74a4.86 4.86 0 0 1-1-.05z"/>
+  </svg>
+);
 
 export default function Footer() {
   const scrollToTop = () => {
@@ -44,7 +50,7 @@ export default function Footer() {
                 aria-label="TikTok @ArtStileTaty"
                 className="p-2.5 bg-white/5 hover:bg-gold-bronze hover:text-white rounded-full transition-colors"
               >
-                <Video className="w-4 h-4" />
+                <TikTokIcon className="w-4 h-4" />
               </a>
               <a 
                 href="https://wa.me/393922603869" 

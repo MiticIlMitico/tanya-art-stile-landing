@@ -1,5 +1,11 @@
 import React from 'react';
-import { Instagram, Video, ArrowUpRight, Heart, Users, Sparkles } from 'lucide-react';
+import { Instagram, ArrowUpRight, Heart, Users, Sparkles } from 'lucide-react';
+
+const TikTokIcon = ({ className = "w-4 h-4" }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="currentColor">
+    <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 1 1-2.89-2.89c.35 0 .68.06 1 .17V9.47a6.34 6.34 0 0 0-1-.08 6.34 6.34 0 1 0 6.34 6.34V8.71a8.28 8.28 0 0 0 4.77 1.48V6.74a4.86 4.86 0 0 1-1-.05z"/>
+  </svg>
+);
 
 export default function SocialFeed() {
   return (
@@ -84,7 +90,7 @@ export default function SocialFeed() {
             </div>
           </a>
 
-          {/* Real TikTok Card */}
+          {/* Real Official TikTok Brand Card */}
           <a
             href="https://tiktok.com/@ArtStileTaty"
             target="_blank"
@@ -94,11 +100,11 @@ export default function SocialFeed() {
             <div className="flex items-center justify-between mb-6">
               <div className="flex items-center gap-3">
                 <div className="p-3 bg-black border border-white/20 text-white rounded-full">
-                  <Video className="w-5 h-5 text-gold-honey" />
+                  <TikTokIcon className="w-5 h-5 text-gold-honey" />
                 </div>
                 <div>
                   <span className="font-serif text-lg font-bold text-gallery-50 block group-hover:text-gold-honey transition-colors">
-                    TikTok Atelier
+                    TikTok Ufficiale
                   </span>
                   <span className="text-xs text-gold-honey font-mono font-medium">@ArtStileTaty</span>
                 </div>
@@ -112,7 +118,7 @@ export default function SocialFeed() {
 
             <div className="flex items-center justify-between pt-4 border-t border-white/10 text-xs font-semibold uppercase tracking-widest text-gold-honey">
               <span>Seguimi su @ArtStileTaty</span>
-              <Video className="w-4 h-4 text-gold-bronze" />
+              <TikTokIcon className="w-4 h-4 text-gold-bronze" />
             </div>
           </a>
 
