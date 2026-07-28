@@ -22,12 +22,12 @@ export default function SocialFeed() {
             <h2 className="font-serif text-3xl sm:text-4xl font-bold text-gallery-50 leading-tight">
               Segui il mio processo creativo{' '}
               <span className="italic font-serif text-gold-gradient font-normal block mt-1">
-                dietro le quinte del laboratorio.
+                sui miei canali ufficiali.
               </span>
             </h2>
 
             <p className="text-stone-400 font-light text-base max-w-2xl leading-relaxed">
-              Oltre <strong className="text-gallery-50 font-medium">20.000+ persone</strong> seguono la nascita delle mie creazioni nel mio atelier: dalla stesura dei miei pigmenti permanenti alla foglia d'oro genuina.
+              Condivido quotidianamente la nascita delle mie opere nel mio atelier a Reggio Calabria: dalla stesura dei miei pigmenti permanenti DEKA alla foglia d'oro genuina.
             </p>
           </div>
 
@@ -43,7 +43,7 @@ export default function SocialFeed() {
               </div>
             </div>
             <p className="text-xs text-stone-400 font-light leading-relaxed">
-              Video del mio lavoro su tela e tessuto. Entra nel mio laboratorio a Reggio Calabria.
+              Video virali delle mie lavorazioni. Scopri in tempo reale le mie ultime creazioni.
             </p>
           </div>
 
@@ -52,9 +52,9 @@ export default function SocialFeed() {
         {/* Social Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           
-          {/* Instagram Card */}
+          {/* Real Instagram Card */}
           <a
-            href="https://instagram.com"
+            href="https://instagram.com/tanyahusart"
             target="_blank"
             rel="noopener noreferrer"
             className="group bg-white/5 border border-white/10 hover:border-gold-bronze p-8 transition-all duration-300 flex flex-col justify-between"
@@ -66,27 +66,27 @@ export default function SocialFeed() {
                 </div>
                 <div>
                   <span className="font-serif text-lg font-bold text-gallery-50 block group-hover:text-gold-honey transition-colors">
-                    Instagram Official
+                    Instagram Ufficiale
                   </span>
-                  <span className="text-xs text-stone-400 font-mono">@tanya.art.stile</span>
+                  <span className="text-xs text-gold-honey font-mono font-medium">@tanyahusart</span>
                 </div>
               </div>
               <ArrowUpRight className="w-5 h-5 text-stone-400 group-hover:text-gold-honey group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
             </div>
 
             <p className="text-stone-300 font-light text-sm mb-6 leading-relaxed">
-              I miei scatti d'Atelier, i dettagli macro dei pigmenti DEKA e le anteprime sulle mie nuove opere in arrivo.
+              I miei scatti d'Atelier, i dettagli macro dei pigmenti DEKA ed i video espositivi delle mie nuove creazioni su misura.
             </p>
 
             <div className="flex items-center justify-between pt-4 border-t border-white/10 text-xs font-semibold uppercase tracking-widest text-gold-honey">
-              <span>Seguimi su Instagram</span>
+              <span>Seguimi su @tanyahusart</span>
               <Heart className="w-4 h-4 text-rose-400" />
             </div>
           </a>
 
-          {/* TikTok Card */}
+          {/* Real TikTok Card */}
           <a
-            href="https://tiktok.com"
+            href="https://tiktok.com/@ArtStileTaty"
             target="_blank"
             rel="noopener noreferrer"
             className="group bg-white/5 border border-white/10 hover:border-gold-bronze p-8 transition-all duration-300 flex flex-col justify-between"
@@ -100,18 +100,18 @@ export default function SocialFeed() {
                   <span className="font-serif text-lg font-bold text-gallery-50 block group-hover:text-gold-honey transition-colors">
                     TikTok Atelier
                   </span>
-                  <span className="text-xs text-stone-400 font-mono">@tanya_art_stile</span>
+                  <span className="text-xs text-gold-honey font-mono font-medium">@ArtStileTaty</span>
                 </div>
               </div>
               <ArrowUpRight className="w-5 h-5 text-stone-400 group-hover:text-gold-honey group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
             </div>
 
             <p className="text-stone-300 font-light text-sm mb-6 leading-relaxed">
-              I miei video time-lapse del pennello sulla materia ed i momenti autentici del mio processo creativo.
+              I miei video time-lapse del pennello sulla materia ed i momenti autentici del mio lavoro a mano in laboratorio.
             </p>
 
             <div className="flex items-center justify-between pt-4 border-t border-white/10 text-xs font-semibold uppercase tracking-widest text-gold-honey">
-              <span>Guarda i Miei Time-Lapse su TikTok</span>
+              <span>Seguimi su @ArtStileTaty</span>
               <Video className="w-4 h-4 text-gold-bronze" />
             </div>
           </a>

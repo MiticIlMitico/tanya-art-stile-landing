@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, ArrowUpRight } from 'lucide-react';
+import { Menu, X, ArrowUpRight, Phone, Mail, MessageCircle } from 'lucide-react';
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -43,21 +43,21 @@ export default function Navbar() {
           <a href="#filosofia" className="text-xs uppercase tracking-widest font-medium text-stone-700 hover:text-gold-bronze transition-colors">
             Filosofia
           </a>
-          <a href="#store" className="text-xs uppercase tracking-widest font-medium text-stone-700 hover:text-gold-bronze transition-colors">
-            Atelier Store
+          <a href="#contatti" className="text-xs uppercase tracking-widest font-medium text-stone-700 hover:text-gold-bronze transition-colors">
+            Contatti
           </a>
         </nav>
 
-        {/* Boutique Online CTA Button */}
-        <div className="hidden md:flex items-center">
+        {/* Real WhatsApp / Contact CTA Button */}
+        <div className="hidden md:flex items-center gap-3">
           <a
-            href="https://store.tanyaartstile.com"
+            href="https://wa.me/393922603869"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-outline"
           >
-            <span>Boutique Online</span>
-            <ArrowUpRight className="w-3.5 h-3.5 text-gold-bronze" />
+            <MessageCircle className="w-3.5 h-3.5 text-emerald-600" />
+            <span>Contatta in Atelier</span>
           </a>
         </div>
 
@@ -84,17 +84,17 @@ export default function Navbar() {
             <a href="#filosofia" onClick={() => setMobileMenuOpen(false)} className="text-sm uppercase tracking-widest font-medium text-stone-800">
               Filosofia
             </a>
-            <a href="#store" onClick={() => setMobileMenuOpen(false)} className="text-sm uppercase tracking-widest font-medium text-stone-800">
-              Atelier Store
+            <a href="#contatti" onClick={() => setMobileMenuOpen(false)} className="text-sm uppercase tracking-widest font-medium text-stone-800">
+              Contatti Direct
             </a>
             <a
-              href="https://store.tanyaartstile.com"
+              href="https://wa.me/393922603869"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-primary mt-2"
             >
-              <span>Boutique Online</span>
-              <ArrowUpRight className="w-4 h-4 text-gold-honey" />
+              <MessageCircle className="w-4 h-4 text-emerald-400" />
+              <span>Scrivimi su WhatsApp</span>
             </a>
           </nav>
         </div>

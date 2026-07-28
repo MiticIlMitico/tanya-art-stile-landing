@@ -1,8 +1,10 @@
 import React from 'react';
-import { X, ExternalLink, Tag, ShieldCheck, Sparkles, CheckCircle2 } from 'lucide-react';
+import { X, ExternalLink, Tag, ShieldCheck, Sparkles, CheckCircle2, MessageCircle } from 'lucide-react';
 
 export default function ProductModal({ product, onClose }) {
   if (!product) return null;
+
+  const whatsappMessage = encodeURIComponent(`Ciao Tanya, vorrei informazioni sulla creazione "${product.title}" (${product.price}).`);
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 md:p-10 bg-gallery-900/80 backdrop-blur-md animate-fadeIn">
@@ -81,13 +83,13 @@ export default function ProductModal({ product, onClose }) {
           {/* Action CTAs */}
           <div className="mt-8 pt-6 border-t border-stone-200 flex flex-col sm:flex-row gap-3">
             <a
-              href={product.storeUrl || 'https://store.tanyaartstile.com'}
+              href={`https://wa.me/393922603869?text=${whatsappMessage}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-1 inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-gallery-900 text-gallery-50 text-xs font-semibold uppercase tracking-ultra hover:bg-gold-bronze transition-colors shadow-luxury group"
+              className="flex-1 inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-emerald-700 text-white text-xs font-semibold uppercase tracking-ultra hover:bg-emerald-800 transition-colors shadow-luxury group"
             >
-              <span>Acquista in Boutique</span>
-              <ExternalLink className="w-4 h-4 text-gold-honey group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+              <MessageCircle className="w-4 h-4 text-emerald-300" />
+              <span>Richiedi su WhatsApp</span>
             </a>
             
             <button
