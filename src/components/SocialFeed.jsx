@@ -1,5 +1,5 @@
 import React from 'react';
-import { Instagram, ArrowUpRight, Heart, Users, Sparkles } from 'lucide-react';
+import { Instagram, ArrowUpRight, Heart, Sparkles, MessageCircle, Phone, Mail, MapPin } from 'lucide-react';
 
 const TikTokIcon = ({ className = "w-4 h-4" }) => (
   <svg className={className} viewBox="0 0 24 24" fill="currentColor">
@@ -11,114 +11,153 @@ export default function SocialFeed() {
   return (
     <section className="py-20 md:py-28 bg-gallery-900 text-gallery-50 relative overflow-hidden">
       
-      {/* Background Decorative Accent */}
-      <div className="absolute -top-24 -right-24 w-96 h-96 bg-gold-bronze/10 rounded-full blur-3xl pointer-events-none"></div>
+      {/* Glow Backdrops */}
+      <div className="absolute top-0 right-1/4 w-96 h-96 bg-gold-bronze/10 rounded-full blur-3xl pointer-events-none"></div>
+      <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-amber-600/10 rounded-full blur-3xl pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         
-        {/* Banner Header */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center mb-14">
-          
-          <div className="lg:col-span-8 space-y-4">
-            <div className="inline-flex items-center gap-2 text-xs uppercase tracking-ultra font-semibold text-gold-honey">
-              <Sparkles className="w-4 h-4" />
-              <span>Behind The Scenes & Community</span>
-            </div>
-
-            <h2 className="font-serif text-3xl sm:text-4xl font-bold text-gallery-50 leading-tight">
-              Segui il mio processo creativo{' '}
-              <span className="italic font-serif text-gold-gradient font-normal block mt-1">
-                sui miei canali ufficiali.
-              </span>
-            </h2>
-
-            <p className="text-stone-400 font-light text-base max-w-2xl leading-relaxed">
-              Condivido quotidianamente la nascita delle mie opere nel mio atelier a Reggio Calabria: dalla stesura dei miei pigmenti permanenti DEKA alla foglia d'oro genuina.
-            </p>
+        {/* Editorial Section Header */}
+        <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
+          <div className="inline-flex items-center gap-2 text-xs uppercase tracking-ultra font-semibold text-gold-honey bg-white/5 border border-white/10 px-4 py-1.5 rounded-full">
+            <Sparkles className="w-3.5 h-3.5" />
+            <span>Canali Ufficiali & Connessione Direct</span>
           </div>
 
-          {/* Social Stats Callout Card */}
-          <div className="lg:col-span-4 bg-white/5 border border-white/10 p-6 backdrop-blur-md">
-            <div className="flex items-center gap-4 mb-3">
-              <div className="w-11 h-11 rounded-full bg-gold-bronze/20 border border-gold-bronze/50 flex items-center justify-center text-gold-honey">
-                <Users className="w-5 h-5" />
-              </div>
-              <div>
-                <span className="font-serif text-2xl font-bold text-gallery-50 block">20K+</span>
-                <span className="text-xs uppercase tracking-widest text-stone-400">Visualizzazioni Community</span>
-              </div>
-            </div>
-            <p className="text-xs text-stone-400 font-light leading-relaxed">
-              Video virali delle mie lavorazioni. Scopri in tempo reale le mie ultime creazioni.
-            </p>
-          </div>
+          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-gallery-50 leading-tight">
+            Entra Nel Mio Mondo{' '}
+            <span className="italic font-serif text-gold-gradient font-normal block mt-1">
+              tra arte visiva, moda e creazione.
+            </span>
+          </h2>
 
+          <p className="text-stone-400 font-light text-base max-w-xl mx-auto leading-relaxed">
+            Segui quotidianamente il mio lavoro nel laboratorio di pittura a Reggio Calabria e rimani in contatto diretto con me per creazioni su misura ed opere d'arte.
+          </p>
         </div>
 
-        {/* Social Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {/* High-Fashion Social & Direct Contact Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           
-          {/* Real Instagram Card */}
+          {/* Instagram Card */}
           <a
             href="https://instagram.com/tanyahusart"
             target="_blank"
             rel="noopener noreferrer"
-            className="group bg-white/5 border border-white/10 hover:border-gold-bronze p-8 transition-all duration-300 flex flex-col justify-between"
+            className="group relative bg-gradient-to-b from-white/10 to-white/5 border border-white/15 hover:border-gold-bronze p-8 backdrop-blur-md transition-all duration-500 flex flex-col justify-between hover:-translate-y-1 shadow-2xl"
           >
-            <div className="flex items-center justify-between mb-6">
-              <div className="flex items-center gap-3">
-                <div className="p-3 bg-gradient-to-tr from-amber-500 to-rose-500 text-white rounded-full">
-                  <Instagram className="w-5 h-5" />
+            <div>
+              <div className="flex items-center justify-between mb-6">
+                <div className="w-12 h-12 rounded-full bg-gradient-to-tr from-amber-500 via-rose-500 to-purple-600 p-0.5 shadow-lg">
+                  <div className="w-full h-full bg-gallery-900 rounded-full flex items-center justify-center text-white">
+                    <Instagram className="w-6 h-6" />
+                  </div>
                 </div>
-                <div>
-                  <span className="font-serif text-lg font-bold text-gallery-50 block group-hover:text-gold-honey transition-colors">
-                    Instagram Ufficiale
-                  </span>
-                  <span className="text-xs text-gold-honey font-mono font-medium">@tanyahusart</span>
+                <div className="p-2 bg-white/5 rounded-full group-hover:bg-gold-bronze group-hover:text-white transition-colors">
+                  <ArrowUpRight className="w-4 h-4 text-stone-300 group-hover:text-white" />
                 </div>
               </div>
-              <ArrowUpRight className="w-5 h-5 text-stone-400 group-hover:text-gold-honey group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
+
+              <span className="text-[10px] uppercase tracking-ultra font-semibold text-gold-honey block mb-1">
+                Galleria Visiva & Atelier
+              </span>
+
+              <h3 className="font-serif text-2xl font-bold text-gallery-50 group-hover:text-gold-honey transition-colors mb-2">
+                Instagram Ufficiale
+              </h3>
+
+              <p className="text-xs font-mono text-stone-300 mb-4 bg-white/5 px-2.5 py-1 inline-block border border-white/10">
+                @tanyahusart
+              </p>
+
+              <p className="text-stone-400 font-light text-xs leading-relaxed mb-6">
+                Scatti d'Atelier ad alta definizione, dettagli macro dei pigmenti DEKA ed anteprime sulle mie nuove creazioni d'alta moda in arrivo.
+              </p>
             </div>
 
-            <p className="text-stone-300 font-light text-sm mb-6 leading-relaxed">
-              I miei scatti d'Atelier, i dettagli macro dei pigmenti DEKA ed i video espositivi delle mie nuove creazioni su misura.
-            </p>
-
-            <div className="flex items-center justify-between pt-4 border-t border-white/10 text-xs font-semibold uppercase tracking-widest text-gold-honey">
-              <span>Seguimi su @tanyahusart</span>
-              <Heart className="w-4 h-4 text-rose-400" />
+            <div className="pt-4 border-t border-white/10 flex items-center justify-between text-xs font-semibold uppercase tracking-widest text-gold-honey">
+              <span>Seguimi su Instagram</span>
+              <Heart className="w-4 h-4 text-rose-400 fill-rose-400/20" />
             </div>
           </a>
 
-          {/* Real Official TikTok Brand Card */}
+          {/* TikTok Card */}
           <a
             href="https://tiktok.com/@ArtStileTaty"
             target="_blank"
             rel="noopener noreferrer"
-            className="group bg-white/5 border border-white/10 hover:border-gold-bronze p-8 transition-all duration-300 flex flex-col justify-between"
+            className="group relative bg-gradient-to-b from-white/10 to-white/5 border border-white/15 hover:border-gold-bronze p-8 backdrop-blur-md transition-all duration-500 flex flex-col justify-between hover:-translate-y-1 shadow-2xl"
           >
-            <div className="flex items-center justify-between mb-6">
-              <div className="flex items-center gap-3">
-                <div className="p-3 bg-black border border-white/20 text-white rounded-full">
-                  <TikTokIcon className="w-5 h-5 text-gold-honey" />
+            <div>
+              <div className="flex items-center justify-between mb-6">
+                <div className="w-12 h-12 rounded-full bg-black border border-white/30 flex items-center justify-center text-white shadow-lg">
+                  <TikTokIcon className="w-6 h-6 text-gold-honey" />
                 </div>
-                <div>
-                  <span className="font-serif text-lg font-bold text-gallery-50 block group-hover:text-gold-honey transition-colors">
-                    TikTok Ufficiale
-                  </span>
-                  <span className="text-xs text-gold-honey font-mono font-medium">@ArtStileTaty</span>
+                <div className="p-2 bg-white/5 rounded-full group-hover:bg-gold-bronze group-hover:text-white transition-colors">
+                  <ArrowUpRight className="w-4 h-4 text-stone-300 group-hover:text-white" />
                 </div>
               </div>
-              <ArrowUpRight className="w-5 h-5 text-stone-400 group-hover:text-gold-honey group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
+
+              <span className="text-[10px] uppercase tracking-ultra font-semibold text-gold-honey block mb-1">
+                Processo Creativo & Time-Lapse
+              </span>
+
+              <h3 className="font-serif text-2xl font-bold text-gallery-50 group-hover:text-gold-honey transition-colors mb-2">
+                TikTok Ufficiale
+              </h3>
+
+              <p className="text-xs font-mono text-stone-300 mb-4 bg-white/5 px-2.5 py-1 inline-block border border-white/10">
+                @ArtStileTaty
+              </p>
+
+              <p className="text-stone-400 font-light text-xs leading-relaxed mb-6">
+                Video time-lapse delle pennellate sulla materia, segreti di stesura del colore e momenti autentici direttamente dal mio laboratorio.
+              </p>
             </div>
 
-            <p className="text-stone-300 font-light text-sm mb-6 leading-relaxed">
-              I miei video time-lapse del pennello sulla materia ed i momenti autentici del mio lavoro a mano in laboratorio.
-            </p>
-
-            <div className="flex items-center justify-between pt-4 border-t border-white/10 text-xs font-semibold uppercase tracking-widest text-gold-honey">
-              <span>Seguimi su @ArtStileTaty</span>
+            <div className="pt-4 border-t border-white/10 flex items-center justify-between text-xs font-semibold uppercase tracking-widest text-gold-honey">
+              <span>Seguimi su TikTok</span>
               <TikTokIcon className="w-4 h-4 text-gold-bronze" />
+            </div>
+          </a>
+
+          {/* Direct WhatsApp & Atelier Contact Card */}
+          <a
+            href="https://wa.me/393922603869"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group relative bg-gradient-to-b from-emerald-950/40 to-gallery-900 border border-emerald-500/30 hover:border-emerald-400 p-8 backdrop-blur-md transition-all duration-500 flex flex-col justify-between hover:-translate-y-1 shadow-2xl md:col-span-2 lg:col-span-1"
+          >
+            <div>
+              <div className="flex items-center justify-between mb-6">
+                <div className="w-12 h-12 rounded-full bg-emerald-600/30 border border-emerald-500/50 flex items-center justify-center text-emerald-400 shadow-lg">
+                  <MessageCircle className="w-6 h-6" />
+                </div>
+                <div className="p-2 bg-emerald-500/10 rounded-full group-hover:bg-emerald-600 group-hover:text-white transition-colors">
+                  <ArrowUpRight className="w-4 h-4 text-emerald-400 group-hover:text-white" />
+                </div>
+              </div>
+
+              <span className="text-[10px] uppercase tracking-ultra font-semibold text-emerald-400 block mb-1">
+                Contatto Diretto Personale
+              </span>
+
+              <h3 className="font-serif text-2xl font-bold text-gallery-50 group-hover:text-emerald-300 transition-colors mb-2">
+                WhatsApp & Direct
+              </h3>
+
+              <p className="text-xs font-mono text-emerald-300 mb-4 bg-emerald-950/80 px-2.5 py-1 inline-block border border-emerald-500/30">
+                +39 392 260 3869
+              </p>
+
+              <p className="text-stone-400 font-light text-xs leading-relaxed mb-6">
+                Vuoi richiedere una creazione su misura o informazioni su un'opera? Scrivimi direttamente per parlare con me in Atelier.
+              </p>
+            </div>
+
+            <div className="pt-4 border-t border-emerald-500/20 flex items-center justify-between text-xs font-semibold uppercase tracking-widest text-emerald-400">
+              <span>Chatta con Me su WhatsApp</span>
+              <MessageCircle className="w-4 h-4 text-emerald-400" />
             </div>
           </a>
 
