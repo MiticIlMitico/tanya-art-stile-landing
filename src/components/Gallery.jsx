@@ -152,7 +152,7 @@ export default function Gallery({ onSelectProduct }) {
           ))}
         </div>
 
-        {/* Product Cards Grid */}
+        {/* Product Cards Grid with Uniform Framed Aspect Ratios */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredProducts.map((product) => {
             const waMsg = encodeURIComponent(`Ciao Tanya, vorrei maggiori dettagli per la creazione "${product.title}" (${product.price}).`);
@@ -161,19 +161,22 @@ export default function Gallery({ onSelectProduct }) {
                 key={product.id}
                 className="group bg-white border border-stone-200 overflow-hidden shadow-sm hover:border-gold-bronze transition-all duration-300 flex flex-col justify-between"
               >
-                {/* Image Box */}
+                {/* Fixed Framed Image Box */}
                 <div 
-                  className="relative aspect-[4/5] overflow-hidden bg-stone-100 cursor-pointer"
+                  className="relative aspect-[4/5] overflow-hidden bg-stone-900 cursor-pointer"
                   onClick={() => onSelectProduct(product)}
                 >
                   <img
                     src={product.image}
                     alt={product.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
                   />
 
+                  {/* Gradient Vignette Accent */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20 pointer-events-none"></div>
+
                   {/* Hand Painted Tag */}
-                  <div className="absolute top-3 left-3 bg-gallery-900/90 text-white text-[10px] uppercase tracking-widest px-2.5 py-1 font-medium flex items-center gap-1">
+                  <div className="absolute top-3 left-3 bg-gallery-900/90 text-white text-[10px] uppercase tracking-widest px-2.5 py-1 font-medium flex items-center gap-1 border border-white/10 shadow-md">
                     <Tag className="w-3 h-3 text-gold-honey" />
                     <span>{product.tag}</span>
                   </div>
