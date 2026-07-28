@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    background-color: #F8F6F2;
+    color: #0B0B0B;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+/* Standardized Typography Classes across all sections */
+@layer components {
+  /* Main Section Tag / Kicker */
+  .tag-kicker {
+    @apply text-xs uppercase tracking-ultra font-semibold text-gold-bronze inline-flex items-center gap-2 mb-3;
+  }
+
+  /* Standard Main Section Title */
+  .section-title {
+    @apply font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-gallery-900 leading-tight mb-4;
+  }
+
+  /* Standard Section Subheading */
+  .section-desc {
+    @apply text-base text-stone-600 font-light leading-relaxed max-w-2xl mx-auto mb-10;
+  }
+
+  /* Standard Body Paragraph */
+  .body-text {
+    @apply text-base text-stone-600 font-light leading-relaxed;
+  }
+
+  /* Standard Small Caption */
+  .caption-text {
+    @apply text-xs text-stone-500 font-light;
+  }
+
+  /* Standard Primary Button */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-gallery-900 text-gallery-50 text-xs font-semibold uppercase tracking-widest hover:bg-gold-bronze transition-all duration-300 shadow-sm;
+  }
+
+  /* Standard Secondary Outline Button */
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-transparent text-gallery-900 border border-gallery-900/30 text-xs font-semibold uppercase tracking-widest hover:border-gold-bronze hover:text-gold-bronze transition-all duration-300;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #F8F6F2;
+}
+::-webkit-scrollbar-thumb {
+  background: #D38C37;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #0B0B0B;
+}
+
+/* Text Gold Gradient */
+.text-gold-gradient {
+  background: linear-gradient(135deg, #D38C37 0%, #E5B567 50%, #B87627 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Glassmorphism Header */
+.bg-glass {
+  background: rgba(248, 246, 242, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
