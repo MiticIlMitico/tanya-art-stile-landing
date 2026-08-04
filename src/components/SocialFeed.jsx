@@ -1,5 +1,5 @@
 import React from 'react';
-import { Instagram, ArrowUpRight, Heart, Sparkles, MessageCircle, Phone, Mail, MapPin } from 'lucide-react';
+import { Instagram, ArrowUpRight, Heart, Sparkles, MessageCircle } from 'lucide-react';
 
 const TikTokIcon = ({ className = "w-4 h-4" }) => (
   <svg className={className} viewBox="0 0 24 24" fill="currentColor">
@@ -8,6 +8,8 @@ const TikTokIcon = ({ className = "w-4 h-4" }) => (
 );
 
 export default function SocialFeed() {
+  const waCustomMsg = encodeURIComponent("Ciao Tanya! Ho visto i tuoi canali ufficiali sulla landing e vorrei parlare direttamente con te.");
+
   return (
     <section className="py-20 md:py-28 bg-gallery-900 text-gallery-50 relative overflow-hidden">
       
@@ -44,7 +46,7 @@ export default function SocialFeed() {
             href="https://instagram.com/tanyahusart"
             target="_blank"
             rel="noopener noreferrer"
-            className="group relative bg-gradient-to-b from-white/10 to-white/5 border border-white/15 hover:border-gold-bronze p-8 backdrop-blur-md transition-all duration-500 flex flex-col justify-between hover:-translate-y-1 shadow-2xl"
+            className="group relative bg-gradient-to-b from-white/10 to-white/5 border border-white/15 hover:border-gold-bronze p-8 rounded-[2.2rem] backdrop-blur-md transition-all duration-500 flex flex-col justify-between hover:-translate-y-1 shadow-2xl"
           >
             <div>
               <div className="flex items-center justify-between mb-6">
@@ -66,7 +68,7 @@ export default function SocialFeed() {
                 Instagram Ufficiale
               </h3>
 
-              <p className="text-xs font-mono text-stone-300 mb-4 bg-white/5 px-2.5 py-1 inline-block border border-white/10">
+              <p className="text-xs font-mono text-stone-300 mb-4 bg-white/5 px-3 py-1 inline-block rounded-full border border-white/10">
                 @tanyahusart
               </p>
 
@@ -86,7 +88,7 @@ export default function SocialFeed() {
             href="https://tiktok.com/@ArtStileTaty"
             target="_blank"
             rel="noopener noreferrer"
-            className="group relative bg-gradient-to-b from-white/10 to-white/5 border border-white/15 hover:border-gold-bronze p-8 backdrop-blur-md transition-all duration-500 flex flex-col justify-between hover:-translate-y-1 shadow-2xl"
+            className="group relative bg-gradient-to-b from-white/10 to-white/5 border border-white/15 hover:border-gold-bronze p-8 rounded-[2.2rem] backdrop-blur-md transition-all duration-500 flex flex-col justify-between hover:-translate-y-1 shadow-2xl"
           >
             <div>
               <div className="flex items-center justify-between mb-6">
@@ -106,7 +108,7 @@ export default function SocialFeed() {
                 TikTok Ufficiale
               </h3>
 
-              <p className="text-xs font-mono text-stone-300 mb-4 bg-white/5 px-2.5 py-1 inline-block border border-white/10">
+              <p className="text-xs font-mono text-stone-300 mb-4 bg-white/5 px-3 py-1 inline-block rounded-full border border-white/10">
                 @ArtStileTaty
               </p>
 
@@ -123,10 +125,10 @@ export default function SocialFeed() {
 
           {/* Direct WhatsApp & Atelier Contact Card */}
           <a
-            href="https://wa.me/393922603869"
+            href={`https://wa.me/393922603869?text=${waCustomMsg}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="group relative bg-gradient-to-b from-emerald-950/40 to-gallery-900 border border-emerald-500/30 hover:border-emerald-400 p-8 backdrop-blur-md transition-all duration-500 flex flex-col justify-between hover:-translate-y-1 shadow-2xl md:col-span-2 lg:col-span-1"
+            className="group relative bg-gradient-to-b from-emerald-950/40 to-gallery-900 border border-emerald-500/30 hover:border-emerald-400 p-8 rounded-[2.2rem] backdrop-blur-md transition-all duration-500 flex flex-col justify-between hover:-translate-y-1 shadow-2xl md:col-span-2 lg:col-span-1"
           >
             <div>
               <div className="flex items-center justify-between mb-6">
@@ -146,7 +148,7 @@ export default function SocialFeed() {
                 WhatsApp & Direct
               </h3>
 
-              <p className="text-xs font-mono text-emerald-300 mb-4 bg-emerald-950/80 px-2.5 py-1 inline-block border border-emerald-500/30">
+              <p className="text-xs font-mono text-emerald-300 mb-4 bg-emerald-950/80 px-3 py-1 inline-block rounded-full border border-emerald-500/30">
                 +39 392 260 3869
               </p>
 

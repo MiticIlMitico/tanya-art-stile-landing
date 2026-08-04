@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowUp, Instagram, ShieldCheck, Phone, Mail, MapPin, MessageCircle } from 'lucide-react';
+import { ArrowUp, Instagram, ExternalLink, ShoppingBag, Phone, Mail, MapPin, MessageCircle } from 'lucide-react';
 
 const TikTokIcon = ({ className = "w-4 h-4" }) => (
   <svg className={className} viewBox="0 0 24 24" fill="currentColor">
@@ -12,10 +12,50 @@ export default function Footer() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  const waCustomMsg = encodeURIComponent("Ciao Tanya! Vorrei informazioni per ordinare un capo personalizzato su disegno.");
+
   return (
-    <footer id="contatti" className="bg-gallery-900 text-stone-400 pt-16 pb-10 border-t border-stone-800">
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
+    <footer id="contatti" className="bg-gallery-900 text-stone-400 pt-16 pb-10 border-t border-stone-800 relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         
+        {/* Top Rounded Banner for Official E-Commerce */}
+        <div className="mb-12 p-8 bg-gradient-to-r from-stone-900 via-stone-850 to-stone-900 border border-gold-bronze/40 rounded-[2.5rem] flex flex-col md:flex-row items-center justify-between gap-6 shadow-[0_20px_50px_rgba(0,0,0,0.3)]">
+          <div className="space-y-1.5 text-center md:text-left">
+            <span className="text-[11px] uppercase tracking-widest font-bold text-gold-honey bg-amber-500/10 px-3.5 py-1 rounded-full inline-block mb-1">
+              🛍️ Dove Acquistare le Creazioni di Tanya
+            </span>
+            <h4 className="font-serif text-2xl font-bold text-white">
+              Visita lo Shop Online Ufficiale su TaniaHus.com
+            </h4>
+            <p className="text-xs text-stone-300 font-light max-w-xl">
+              Trovi il catalogo completo di abiti pronti e dipinti originali con spedizione diretta in tutta Italia ed all'estero.
+            </p>
+          </div>
+
+          <div className="flex flex-col sm:flex-row items-center gap-3 shrink-0">
+            <a
+              href="https://taniahus.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary py-3 px-6 text-xs"
+            >
+              <ShoppingBag className="w-4 h-4 text-gold-honey" />
+              <span>Vai su TaniaHus.com</span>
+              <ExternalLink className="w-3.5 h-3.5 opacity-80" />
+            </a>
+
+            <a
+              href={`https://wa.me/393922603869?text=${waCustomMsg}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-outline bg-emerald-950/40 text-emerald-300 border-emerald-500/50 hover:bg-emerald-900/60 py-3 px-5 text-xs"
+            >
+              <MessageCircle className="w-4 h-4 text-emerald-400" />
+              <span>Capo Su Misura</span>
+            </a>
+          </div>
+        </div>
+
         {/* Main Footer Row */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-stone-800">
           
@@ -30,7 +70,7 @@ export default function Footer() {
             </a>
 
             <p className="text-stone-400 font-light text-xs leading-relaxed max-w-sm">
-              Nel mio Atelier a Reggio Calabria unisco l'alta moda con l'espressività dell'arte artigianale. Ogni mia creazione è dipinta a mano ed unica al mondo.
+              Nel mio Atelier a Reggio Calabria unisco l'alta moda con l'espressività dell'arte artigianale. Questa è la mia landing page di storia e presentazione artistica.
             </p>
 
             <div className="flex items-center gap-3 text-stone-300">
@@ -53,7 +93,7 @@ export default function Footer() {
                 <TikTokIcon className="w-4 h-4" />
               </a>
               <a 
-                href="https://wa.me/393922603869" 
+                href={`https://wa.me/393922603869?text=${waCustomMsg}`}
                 target="_blank" 
                 rel="noopener noreferrer" 
                 aria-label="WhatsApp +39 392 260 3869"
@@ -64,8 +104,8 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Real Contacts Card (From Business Card) */}
-          <div className="md:col-span-5 space-y-3 bg-white/5 p-6 border border-white/10">
+          {/* Real Contacts Card (Rounded Organic Box) */}
+          <div className="md:col-span-5 space-y-3 bg-white/5 p-6 rounded-3xl border border-white/10">
             <span className="text-xs uppercase tracking-widest text-gold-honey font-semibold block mb-3">
               Contatti Diretti d'Atelier
             </span>
@@ -77,7 +117,7 @@ export default function Footer() {
                 </div>
                 <div>
                   <span className="text-[10px] text-stone-400 block uppercase">Telefono & WhatsApp</span>
-                  <a href="https://wa.me/393922603869" target="_blank" rel="noopener noreferrer" className="font-mono text-stone-200 hover:text-gold-honey transition-colors font-medium">
+                  <a href={`https://wa.me/393922603869?text=${waCustomMsg}`} target="_blank" rel="noopener noreferrer" className="font-mono text-stone-200 hover:text-gold-honey transition-colors font-medium">
                     +39 392 260 3869
                   </a>
                 </div>
@@ -110,14 +150,20 @@ export default function Footer() {
           {/* Quick Links */}
           <div className="md:col-span-3 space-y-3">
             <span className="text-xs uppercase tracking-widest text-gold-honey font-semibold block mb-2">
-              Esplora l'Atelier
+              Link Ufficiali
             </span>
             <ul className="space-y-2 text-xs text-stone-300 font-light">
+              <li>
+                <a href="https://taniahus.com/" target="_blank" rel="noopener noreferrer" className="hover:text-gold-honey font-medium text-gold-honey transition-colors flex items-center gap-1">
+                  <span>E-Commerce TaniaHus.com</span>
+                  <ExternalLink className="w-3 h-3" />
+                </a>
+              </li>
               <li>
                 <a href="#storia" className="hover:text-gold-honey transition-colors">La Mia Storia</a>
               </li>
               <li>
-                <a href="#opere" className="hover:text-gold-honey transition-colors">Le Mie Opere</a>
+                <a href="#opere" className="hover:text-gold-honey transition-colors">Le Opere & Collages</a>
               </li>
               <li>
                 <a href="#filosofia" className="hover:text-gold-honey transition-colors">I Miei 3 Pilastri</a>
@@ -125,12 +171,6 @@ export default function Footer() {
               <li>
                 <a href="https://instagram.com/tanyahusart" target="_blank" rel="noopener noreferrer" className="hover:text-gold-honey transition-colors flex items-center gap-1">
                   <span>Instagram @tanyahusart</span>
-                  <span className="text-[10px] text-gold-bronze">↗</span>
-                </a>
-              </li>
-              <li>
-                <a href="https://tiktok.com/@ArtStileTaty" target="_blank" rel="noopener noreferrer" className="hover:text-gold-honey transition-colors flex items-center gap-1">
-                  <span>TikTok @ArtStileTaty</span>
                   <span className="text-[10px] text-gold-bronze">↗</span>
                 </a>
               </li>
@@ -147,7 +187,7 @@ export default function Footer() {
 
           <button
             onClick={scrollToTop}
-            className="inline-flex items-center gap-2 text-stone-400 hover:text-gold-honey uppercase tracking-widest text-[11px] transition-colors"
+            className="inline-flex items-center gap-2 text-stone-400 hover:text-gold-honey uppercase tracking-widest text-[11px] transition-colors bg-white/5 px-4 py-2 rounded-full"
           >
             <span>Torna in Alto</span>
             <ArrowUp className="w-4 h-4 text-gold-bronze" />

@@ -18,11 +18,11 @@
   }
 }
 
-/* Standardized Typography Classes across all sections */
+/* Standardized Typography & Button Classes across all sections */
 @layer components {
   /* Main Section Tag / Kicker */
   .tag-kicker {
-    @apply text-xs uppercase tracking-ultra font-semibold text-gold-bronze inline-flex items-center gap-2 mb-3;
+    @apply text-xs uppercase tracking-ultra font-semibold text-gold-bronze inline-flex items-center gap-2 mb-3 bg-amber-500/10 px-3.5 py-1.5 rounded-full border border-gold-bronze/20;
   }
 
   /* Standard Main Section Title */
@@ -45,15 +45,41 @@
     @apply text-xs text-stone-500 font-light;
   }
 
-  /* Standard Primary Button */
+  /* Soft Rounded Primary Button */
   .btn-primary {
-    @apply inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-gallery-900 text-gallery-50 text-xs font-semibold uppercase tracking-widest hover:bg-gold-bronze transition-all duration-300 shadow-sm;
+    @apply inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-gallery-900 text-gallery-50 text-xs font-semibold uppercase tracking-widest rounded-full hover:bg-gold-bronze hover:shadow-lg transition-all duration-300 shadow-md hover:-translate-y-0.5;
   }
 
-  /* Standard Secondary Outline Button */
+  /* Soft Rounded Secondary Outline Button */
   .btn-outline {
-    @apply inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-transparent text-gallery-900 border border-gallery-900/30 text-xs font-semibold uppercase tracking-widest hover:border-gold-bronze hover:text-gold-bronze transition-all duration-300;
+    @apply inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-white/80 backdrop-blur-sm text-gallery-900 border border-stone-300 text-xs font-semibold uppercase tracking-widest rounded-full hover:border-gold-bronze hover:text-gold-bronze hover:shadow-md transition-all duration-300 shadow-sm hover:-translate-y-0.5;
   }
+
+  /* Artistic Organic Floating Card */
+  .card-artistic {
+    @apply bg-white/90 backdrop-blur-md rounded-[2.5rem] border border-white/60 shadow-[0_15px_45px_rgba(0,0,0,0.06)] hover:shadow-[0_25px_60px_rgba(211,140,55,0.15)] transition-all duration-500 overflow-hidden;
+  }
+}
+
+/* Organic Background Paint/Glow Blobs */
+.bg-blob-gold {
+  position: absolute;
+  width: 450px;
+  height: 450px;
+  background: radial-gradient(circle, rgba(211,140,55,0.18) 0%, rgba(229,181,103,0.08) 45%, transparent 70%);
+  filter: blur(50px);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.bg-blob-cream {
+  position: absolute;
+  width: 550px;
+  height: 550px;
+  background: radial-gradient(circle, rgba(243,235,220,0.8) 0%, rgba(248,246,242,0.3) 60%, transparent 80%);
+  filter: blur(60px);
+  border-radius: 50%;
+  pointer-events: none;
 }
 
 /* Custom Scrollbar */

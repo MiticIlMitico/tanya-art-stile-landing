@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, ArrowUpRight, Phone, Mail, MessageCircle } from 'lucide-react';
+import { Menu, X, ExternalLink, ShoppingBag, MessageCircle } from 'lucide-react';
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -12,6 +12,8 @@ export default function Navbar() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const waCustomMsg = encodeURIComponent("Ciao Tanya! Vorrei richiedere informazioni per un capo personalizzato su disegno.");
 
   return (
     <header
@@ -33,12 +35,12 @@ export default function Navbar() {
         </a>
 
         {/* Desktop Navigation Links */}
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden md:flex items-center gap-7">
           <a href="#storia" className="text-xs uppercase tracking-widest font-medium text-stone-700 hover:text-gold-bronze transition-colors">
             La Storia
           </a>
           <a href="#opere" className="text-xs uppercase tracking-widest font-medium text-stone-700 hover:text-gold-bronze transition-colors">
-            Le Opere
+            Le Opere & Capi
           </a>
           <a href="#filosofia" className="text-xs uppercase tracking-widest font-medium text-stone-700 hover:text-gold-bronze transition-colors">
             Filosofia
@@ -48,16 +50,27 @@ export default function Navbar() {
           </a>
         </nav>
 
-        {/* Real WhatsApp / Contact CTA Button */}
+        {/* E-Commerce + WhatsApp CTAs */}
         <div className="hidden md:flex items-center gap-3">
           <a
-            href="https://wa.me/393922603869"
+            href={`https://wa.me/393922603869?text=${waCustomMsg}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-outline"
+            className="px-4 py-2 bg-emerald-50 text-emerald-800 border border-emerald-300/60 hover:bg-emerald-100 text-[11px] uppercase tracking-widest font-semibold inline-flex items-center gap-1.5 transition-colors"
           >
             <MessageCircle className="w-3.5 h-3.5 text-emerald-600" />
-            <span>Contatta in Atelier</span>
+            <span>Capo Su Misura</span>
+          </a>
+
+          <a
+            href="https://taniahus.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-primary py-2 px-5 text-[11px]"
+          >
+            <ShoppingBag className="w-3.5 h-3.5 text-gold-honey" />
+            <span>E-Commerce Ufficiale</span>
+            <ExternalLink className="w-3 h-3 opacity-70" />
           </a>
         </div>
 
@@ -74,12 +87,12 @@ export default function Navbar() {
       {/* Mobile Menu */}
       {mobileMenuOpen && (
         <div className="md:hidden bg-gallery-50 border-b border-stone-200 px-6 py-6 animate-fadeIn">
-          <nav className="flex flex-col gap-5 items-center text-center">
+          <nav className="flex flex-col gap-4 items-center text-center">
             <a href="#storia" onClick={() => setMobileMenuOpen(false)} className="text-sm uppercase tracking-widest font-medium text-stone-800">
               La Storia
             </a>
             <a href="#opere" onClick={() => setMobileMenuOpen(false)} className="text-sm uppercase tracking-widest font-medium text-stone-800">
-              Le Opere
+              Le Opere & Capi
             </a>
             <a href="#filosofia" onClick={() => setMobileMenuOpen(false)} className="text-sm uppercase tracking-widest font-medium text-stone-800">
               Filosofia
@@ -87,18 +100,33 @@ export default function Navbar() {
             <a href="#contatti" onClick={() => setMobileMenuOpen(false)} className="text-sm uppercase tracking-widest font-medium text-stone-800">
               Contatti Direct
             </a>
-            <a
-              href="https://wa.me/393922603869"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-primary mt-2"
-            >
-              <MessageCircle className="w-4 h-4 text-emerald-400" />
-              <span>Scrivimi su WhatsApp</span>
-            </a>
+
+            <div className="w-full pt-3 border-t border-stone-200 flex flex-col gap-2">
+              <a
+                href="https://taniahus.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary w-full justify-center"
+              >
+                <ShoppingBag className="w-4 h-4 text-gold-honey" />
+                <span>Vai al Sito E-Commerce (taniahus.com)</span>
+                <ExternalLink className="w-3.5 h-3.5" />
+              </a>
+
+              <a
+                href={`https://wa.me/393922603869?text=${waCustomMsg}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-outline w-full justify-center bg-white text-emerald-800 border-emerald-300"
+              >
+                <MessageCircle className="w-4 h-4 text-emerald-600" />
+                <span>Richiedi Capo Personalizzato</span>
+              </a>
+            </div>
           </nav>
         </div>
       )}
     </header>
   );
 }
+

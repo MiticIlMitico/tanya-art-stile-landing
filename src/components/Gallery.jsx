@@ -1,241 +1,302 @@
-import React, { useState } from 'react';
-import { Tag, Sparkles, Eye, MessageCircle } from 'lucide-react';
+import React from 'react';
+import { Sparkles, ShoppingBag, ExternalLink, MessageCircle, CheckCircle2, Palette, Frame, Layers } from 'lucide-react';
 
-export default function Gallery({ onSelectProduct }) {
-  const [filter, setFilter] = useState('Tutti');
-
-  const products = [
-    // Real Tania Clothing Products
-    {
-      id: 1,
-      title: 'Giacca Sartoriale "Aura Gold"',
-      category: 'Alta Moda',
-      price: '340 €',
-      image: '/real_products/prodotto_1.jpg',
-      tag: 'Pezzo Unico #001',
-      description: 'Capo d\'alta moda in cotone pesante dipinto a mano con pennellate d\'oro e pigmenti permanenti DEKA. Certificato d\'autenticità autografo firmato da Tetyana Husyeva.',
-    },
-    {
-      id: 2,
-      title: 'Abito Cromatico "Ombra & Luce"',
-      category: 'Alta Moda',
-      price: '380 €',
-      image: '/real_products/prodotto_2.jpg',
-      tag: 'Pezzo Unico #002',
-      description: 'Creazione esclusiva dipinta a mano con motivi artistici fluidi a forte spessore materico. Capo numerato d\'Atelier.',
-    },
-    {
-      id: 3,
-      title: 'Capo Sculptural Couture (Fronte & Retro)',
-      category: 'Alta Moda',
-      price: '390 €',
-      image: '/real_products/prodotto_3_front.jpg',
-      altImage: '/real_products/prodotto_3_back.jpg',
-      tag: 'Pezzo Unico #003',
-      description: 'Opera sartoriale a due facce dipinta sul fronte e sul retro con composizioni cromatiche e dettagli in foglia d\'oro genuina.',
-    },
-    {
-      id: 4,
-      title: 'Camicia / Top "Fine Art Gold"',
-      category: 'Alta Moda',
-      price: '260 €',
-      image: '/real_products/prodotto_4.jpg',
-      tag: 'Pezzo Unico #004',
-      description: 'Creazione in cotone biologico dipinta a pennello libero con pigmento metallico d\'oro bronzato. Pezzo d\'autore numerato.',
-    },
-    {
-      id: 5,
-      title: 'Abito Sartoriale "Atelier Line"',
-      category: 'Alta Moda',
-      price: '320 €',
-      image: '/real_products/prodotto_5.jpg',
-      tag: 'Pezzo Unico #005',
-      description: 'Capo sartoriale unico impreziosito da motivi calligrafici originali stesi a mano nel laboratorio di Reggio Calabria.',
-    },
-
-    // Real Tania Paintings (Quadri su Tela)
-    {
-      id: 6,
-      title: 'Quadro "Essenza CROMATICA N.1"',
-      category: 'Quadri su Tela',
-      price: '350 €',
-      image: '/real_quadri/quadro_1.jpg',
-      tag: 'Opera Originale',
-      description: 'Opera pittorica originale su tela realizzata da Tetyana Husyeva con pigmenti acrilici, tratti materici e foglia d\'oro genuina.',
-    },
-    {
-      id: 7,
-      title: 'Quadro "Armonia d\'Atelier N.2"',
-      category: 'Quadri su Tela',
-      price: '320 €',
-      image: '/real_quadri/quadro_2.jpg',
-      tag: 'Opera Originale',
-      description: 'Dipinto su tela formato galleria caratterizzato da ampie spatolate di colore e contrasto dorato. Pezzo unico firmato dall\'artista.',
-    },
-    {
-      id: 8,
-      title: 'Quadro "Visione Astratta N.3"',
-      category: 'Quadri su Tela',
-      price: '390 €',
-      image: '/real_quadri/quadro_3.jpg',
-      tag: 'Opera Originale',
-      description: 'Composizione astratta contemporanea dipinta a mano nel laboratorio di pittura di Tetyana Husyeva a Reggio Calabria.',
-    },
-    {
-      id: 9,
-      title: 'Quadro "Tratto Materico N.4"',
-      category: 'Quadri su Tela',
-      price: '290 €',
-      image: '/real_quadri/quadro_4.jpg',
-      tag: 'Opera Originale',
-      description: 'Studio d\'arte su tela con stratificazioni cromatiche dense e riflessi cromatici dorati. Firmato in calce dall\'artista.',
-    },
-    {
-      id: 10,
-      title: 'Quadro "Ombra e Luce N.5"',
-      category: 'Quadri su Tela',
-      price: '360 €',
-      image: '/real_quadri/quadro_5.jpg',
-      tag: 'Opera Originale',
-      description: 'Dipinto originale d\'autore con contrasti profondi ed elementi d\'arte informale. Certificato di autenticità autografo incluso.',
-    },
-    {
-      id: 11,
-      title: 'Quadro "Riflesso d\'Oro N.6"',
-      category: 'Quadri su Tela',
-      price: '400 €',
-      image: '/real_quadri/quadro_6.jpg',
-      tag: 'Opera Originale',
-      description: 'Opera su tela di grande presenza visiva impreziosita da dettagli in foglia d\'oro genuina e firmata di pugno da Tetyana Husyeva.',
-    },
-  ];
-
-  const filteredProducts =
-    filter === 'Tutti'
-      ? products
-      : products.filter((p) => p.category === filter);
+export default function Gallery() {
+  const waMsgQuadro = encodeURIComponent("Ciao Tanya! Vorrei richiedere un quadro o dipinto personalizzato su misura.");
+  const waMsgCustom = encodeURIComponent("Ciao Tanya! Vorrei creare un'opera o accessorio unico su mia idea e disegno.");
 
   return (
-    <section id="opere" className="py-20 md:py-28 bg-gallery-100/40 relative">
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
+    <section id="opere" className="py-20 md:py-32 bg-gallery-100/40 relative overflow-hidden">
+      
+      {/* Background Soft Blobs */}
+      <div className="bg-blob-gold top-40 -left-20"></div>
+      <div className="bg-blob-gold bottom-40 -right-20"></div>
+
+      <div className="max-w-7xl mx-auto px-6 md:px-12 space-y-28 md:space-y-36 relative z-10">
         
-        {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-10">
+        {/* Section Header */}
+        <div className="text-center max-w-3xl mx-auto space-y-4">
           <div className="tag-kicker justify-center">
             <Sparkles className="w-3.5 h-3.5" />
-            <span>Portfolio Ufficiale</span>
+            <span>Le Collezioni & Creazioni d'Autore</span>
           </div>
 
-          <h2 className="font-serif text-3xl sm:text-4xl font-bold text-gallery-900 leading-tight mb-3">
-            Le Mie Creazioni & Quadri d'Autore
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-gallery-900 leading-tight">
+            I Principali Abiti, Dipinti & Pezzi Unici
           </h2>
 
-          <p className="body-text max-w-xl mx-auto">
-            Ogni pezzo è numerato, dipinto interamente da me nel mio atelier a Reggio Calabria ed unico al mondo.
+          <p className="body-text text-stone-600 max-w-2xl mx-auto">
+            Questa landing page presenta le opere e l'identità artistica di <strong>Tetyana Husyeva</strong>. I capi ed i quadri pronti da acquistare sono disponibili sul suo e-commerce ufficiale, mentre ogni pezzo su misura può essere concordato direttamente in Atelier.
           </p>
         </div>
 
-        {/* Filter Tabs */}
-        <div className="flex flex-wrap justify-center items-center gap-2 mb-12">
-          {['Tutti', 'Alta Moda', 'Quadri su Tela'].map((tab) => (
-            <button
-              key={tab}
-              onClick={() => setFilter(tab)}
-              className={`px-5 py-2 text-xs font-semibold tracking-widest uppercase transition-all duration-300 ${
-                filter === tab
-                  ? 'bg-gallery-900 text-gallery-50 shadow-sm'
-                  : 'bg-white text-stone-600 hover:text-gallery-900 border border-stone-200'
-              }`}
-            >
-              {tab}
-            </button>
-          ))}
-        </div>
+        {/* ========================================================================= */}
+        {/* BLOCK 1: ABITI & VESTITI FATTI DA LEI */}
+        {/* ========================================================================= */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+          
+          {/* Left Text Column */}
+          <div className="lg:col-span-6 space-y-6">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-amber-500/10 rounded-full text-gold-bronze text-[11px] uppercase tracking-widest font-bold">
+              <Palette className="w-3.5 h-3.5" />
+              <span>Prima Collezione — High Fashion & Wearable Art</span>
+            </div>
 
-        {/* Product Cards Grid with Uniform Framed Aspect Ratios */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredProducts.map((product) => {
-            const waMsg = encodeURIComponent(`Ciao Tanya, vorrei maggiori dettagli per la creazione "${product.title}" (${product.price}).`);
-            return (
-              <div
-                key={product.id}
-                className="group bg-white border border-stone-200 overflow-hidden shadow-sm hover:border-gold-bronze transition-all duration-300 flex flex-col justify-between"
+            <h3 className="font-serif text-3xl sm:text-4xl font-bold text-gallery-900 leading-tight">
+              Abiti Sartoriali Dipinti a Mano
+            </h3>
+
+            <p className="body-text text-stone-700 leading-relaxed">
+              Ogni abito nasce come un'opera d'arte tridimensionale. Realizzati in puro cotone e tessuti di prima scelta, i capi vengono dipinti interamente a pennello da Tetyana Husyeva utilizzando pigmenti permanenti DEKA e sfumature dorate in spessore materico. 
+            </p>
+
+            <ul className="space-y-3 text-xs text-stone-700 font-medium pt-2">
+              <li className="flex items-start gap-3">
+                <div className="p-1 bg-amber-500/10 rounded-full text-gold-bronze shrink-0 mt-0.5">
+                  <CheckCircle2 className="w-3.5 h-3.5" />
+                </div>
+                <span>Pigmenti permanenti stesi a mano, resistenti ed indelebili.</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <div className="p-1 bg-amber-500/10 rounded-full text-gold-bronze shrink-0 mt-0.5">
+                  <CheckCircle2 className="w-3.5 h-3.5" />
+                </div>
+                <span>Capi unici numerati d'Atelier (Pezzi #001, #002, ecc.).</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <div className="p-1 bg-amber-500/10 rounded-full text-gold-bronze shrink-0 mt-0.5">
+                  <CheckCircle2 className="w-3.5 h-3.5" />
+                </div>
+                <span>Corredati da Certificato d'Autenticità autografo firmato.</span>
+              </li>
+            </ul>
+
+            {/* Single Button for Dresses -> taniahus.com */}
+            <div className="pt-4 border-t border-stone-200/70">
+              <a
+                href="https://taniahus.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary"
               >
-                {/* Fixed Framed Image Box */}
-                <div 
-                  className="relative aspect-[4/5] overflow-hidden bg-stone-900 cursor-pointer"
-                  onClick={() => onSelectProduct(product)}
-                >
+                <ShoppingBag className="w-4 h-4 text-gold-honey" />
+                <span>Scopri gli Abiti su TaniaHus.com</span>
+                <ExternalLink className="w-3.5 h-3.5 opacity-80" />
+              </a>
+            </div>
+          </div>
+
+          {/* Right Column: Organic Collage of Real Dresses */}
+          <div className="lg:col-span-6 relative">
+            <div className="p-4 bg-white/80 backdrop-blur-md rounded-[2.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.08)] border border-white/80">
+              
+              <div className="grid grid-cols-12 gap-3 md:gap-4">
+                {/* Main Featured Photo */}
+                <div className="col-span-8 relative aspect-[3/4] rounded-2xl overflow-hidden group shadow-md">
                   <img
-                    src={product.image}
-                    alt={product.title}
-                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                    src="/real_products/prodotto_1.jpg"
+                    alt="Giacca Sartoriale Aura Gold"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
-
-                  {/* Gradient Vignette Accent */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20 pointer-events-none"></div>
-
-                  {/* Hand Painted Tag */}
-                  <div className="absolute top-3 left-3 bg-gallery-900/90 text-white text-[10px] uppercase tracking-widest px-2.5 py-1 font-medium flex items-center gap-1 border border-white/10 shadow-md">
-                    <Tag className="w-3 h-3 text-gold-honey" />
-                    <span>{product.tag}</span>
-                  </div>
-
-                  {/* Quick View Button */}
-                  <div className="absolute inset-0 bg-gallery-900/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                    <button className="px-4 py-2 bg-gallery-50 text-gallery-900 text-xs font-semibold uppercase tracking-widest flex items-center gap-2 shadow-md">
-                      <Eye className="w-4 h-4 text-gold-bronze" />
-                      <span>Anteprima Opera</span>
-                    </button>
+                  <div className="absolute top-3 left-3 bg-gallery-900/90 text-white text-[10px] uppercase tracking-widest px-3 py-1 rounded-full font-semibold border border-white/20">
+                    Giacca "Aura Gold"
                   </div>
                 </div>
 
-                {/* Product Info */}
-                <div className="p-6 flex flex-col flex-grow justify-between space-y-4">
-                  <div>
-                    <span className="text-[10px] uppercase tracking-widest text-gold-bronze font-semibold block mb-1">
-                      {product.category}
-                    </span>
-                    
-                    <h3 className="font-serif text-lg font-bold text-gallery-900 group-hover:text-gold-bronze transition-colors">
-                      {product.title}
-                    </h3>
-
-                    <p className="text-stone-500 font-light text-xs mt-2 line-clamp-2 leading-relaxed">
-                      {product.description}
-                    </p>
-                  </div>
-
-                  {/* Price & Real WhatsApp Contact CTA */}
-                  <div className="pt-3 border-t border-stone-100 flex items-center justify-between">
-                    <div>
-                      <span className="text-[10px] uppercase tracking-widest text-stone-400 block">Valore dell'Opera</span>
-                      <span className="font-serif text-base font-bold text-gallery-900">{product.price}</span>
+                {/* Stacked Right Column Photos */}
+                <div className="col-span-4 flex flex-col gap-3 md:gap-4">
+                  <div className="relative aspect-[3/4] rounded-2xl overflow-hidden group shadow-sm">
+                    <img
+                      src="/real_products/prodotto_2.jpg"
+                      alt="Abito Cromatico Ombra & Luce"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute bottom-2 left-2 right-2 bg-black/60 backdrop-blur-sm text-white text-[9px] uppercase tracking-wider px-2 py-0.5 rounded-full text-center truncate">
+                      Alta Moda
                     </div>
-
-                    <a
-                      href={`https://wa.me/393922603869?text=${waMsg}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1 text-xs font-semibold uppercase tracking-widest text-emerald-700 hover:text-emerald-900 transition-colors"
-                    >
-                      <MessageCircle className="w-3.5 h-3.5 text-emerald-600" />
-                      <span>Richiedi</span>
-                    </a>
                   </div>
 
+                  <div className="relative aspect-[3/4] rounded-2xl overflow-hidden group shadow-sm">
+                    <img
+                      src="/real_products/prodotto_4.jpg"
+                      alt="Top Fine Art Gold"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute bottom-2 left-2 right-2 bg-black/60 backdrop-blur-sm text-white text-[9px] uppercase tracking-wider px-2 py-0.5 rounded-full text-center truncate">
+                      Cotone & Oro
+                    </div>
+                  </div>
                 </div>
 
+                {/* Bottom Row Collage Cards */}
+                <div className="col-span-6 relative aspect-[4/3] rounded-2xl overflow-hidden group shadow-sm">
+                  <img
+                    src="/real_products/prodotto_3_front.jpg"
+                    alt="Sculptural Couture Front"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                  <span className="absolute bottom-2.5 left-3 text-white text-[10px] uppercase font-medium bg-black/40 px-2.5 py-0.5 rounded-full backdrop-blur-sm">
+                    Fronte Sartoriale
+                  </span>
+                </div>
+
+                <div className="col-span-6 relative aspect-[4/3] rounded-2xl overflow-hidden group shadow-sm">
+                  <img
+                    src="/real_products/prodotto_5.jpg"
+                    alt="Atelier Line Dress"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                  <span className="absolute bottom-2.5 left-3 text-white text-[10px] uppercase font-medium bg-black/40 px-2.5 py-0.5 rounded-full backdrop-blur-sm">
+                    Pezzo d'Autore
+                  </span>
+                </div>
               </div>
-            );
-          })}
+
+            </div>
+          </div>
+
         </div>
 
-        {/* Disclaimer */}
-        <div className="mt-12 text-center">
-          <p className="text-xs text-stone-500 font-light italic">
-            * Tutti i prezzi includono la mia confezione regalo d'Atelier ed il mio Certificato di Autenticità autografo.
+        {/* ========================================================================= */}
+        {/* BLOCK 2: SEZIONE QUADRI */}
+        {/* ========================================================================= */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+          
+          {/* Left Column: Organic Collage of Real Paintings */}
+          <div className="lg:col-span-6 order-2 lg:order-1 relative">
+            <div className="p-4 bg-white/80 backdrop-blur-md rounded-[2.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.08)] border border-white/80">
+              
+              <div className="grid grid-cols-2 gap-3 md:gap-4">
+                <div className="relative aspect-square rounded-2xl overflow-hidden group shadow-md">
+                  <img
+                    src="/real_quadri/quadro_1.jpg"
+                    alt="Quadro Essenza Cromatica N.1"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute top-2.5 left-2.5 bg-gallery-900/90 text-white text-[9px] uppercase tracking-widest px-2.5 py-1 rounded-full font-semibold">
+                    Foglia d'Oro Genuina
+                  </div>
+                </div>
+
+                <div className="relative aspect-square rounded-2xl overflow-hidden group shadow-md">
+                  <img
+                    src="/real_quadri/quadro_4.jpg"
+                    alt="Quadro Tratto Materico N.4"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute top-2.5 left-2.5 bg-gallery-900/90 text-white text-[9px] uppercase tracking-widest px-2.5 py-1 rounded-full font-semibold">
+                    Acrilico Materico
+                  </div>
+                </div>
+
+                <div className="relative aspect-square rounded-2xl overflow-hidden group shadow-md">
+                  <img
+                    src="/real_quadri/quadro_6.jpg"
+                    alt="Quadro Riflesso d'Oro N.6"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute top-2.5 left-2.5 bg-gallery-900/90 text-white text-[9px] uppercase tracking-widest px-2.5 py-1 rounded-full font-semibold">
+                    Atelier d'Autore
+                  </div>
+                </div>
+
+                <div className="relative aspect-square rounded-2xl overflow-hidden group shadow-md">
+                  <img
+                    src="/real_quadri/quadro_7.jpg"
+                    alt="Quadro Composizione Astratta N.7"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute top-2.5 left-2.5 bg-gallery-900/90 text-white text-[9px] uppercase tracking-widest px-2.5 py-1 rounded-full font-semibold">
+                    Pezzo Unico
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          {/* Right Text Column */}
+          <div className="lg:col-span-6 order-1 lg:order-2 space-y-6">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-amber-500/10 rounded-full text-gold-bronze text-[11px] uppercase tracking-widest font-bold">
+              <Frame className="w-3.5 h-3.5" />
+              <span>Seconda Sezione — Opere d'Arte su Tela</span>
+            </div>
+
+            <h3 className="font-serif text-3xl sm:text-4xl font-bold text-gallery-900 leading-tight">
+              Quadri & Dipinti d'Autore
+            </h3>
+
+            <p className="body-text text-stone-700 leading-relaxed">
+              Oltre alla moda, la passione di Tetyana Husyeva vive sulle tele d'Atelier. Dipinti caratterizzati da dense stratificazioni cromatiche, contrasti profondi ed impreziositi con vera foglia d'oro. Opere pensate per impreziosire spazi privati, gallerie ed ambienti esclusivi.
+            </p>
+
+            <ul className="space-y-3 text-xs text-stone-700 font-medium pt-2">
+              <li className="flex items-start gap-3">
+                <div className="p-1 bg-amber-500/10 rounded-full text-gold-bronze shrink-0 mt-0.5">
+                  <CheckCircle2 className="w-3.5 h-3.5" />
+                </div>
+                <span>Tele originali lavorate a spatola con acrilici ad alta tenuta.</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <div className="p-1 bg-amber-500/10 rounded-full text-gold-bronze shrink-0 mt-0.5">
+                  <CheckCircle2 className="w-3.5 h-3.5" />
+                </div>
+                <span>Elementi metallici e riflessi cromatici dorati unici.</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <div className="p-1 bg-amber-500/10 rounded-full text-gold-bronze shrink-0 mt-0.5">
+                  <CheckCircle2 className="w-3.5 h-3.5" />
+                </div>
+                <span>Opere firmate di pugno in calce con certificazione inclusa.</span>
+              </li>
+            </ul>
+
+            {/* Single Button for Paintings -> Commissiona Quadro Su Misura (WhatsApp) */}
+            <div className="pt-4 border-t border-stone-200/70">
+              <a
+                href={`https://wa.me/393922603869?text=${waMsgQuadro}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary bg-emerald-700 hover:bg-emerald-800 text-white"
+              >
+                <MessageCircle className="w-4 h-4 text-emerald-300" />
+                <span>Commissiona Quadro Su Misura</span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+        {/* ========================================================================= */}
+        {/* BLOCK 3: E TANTO ALTRO (TEXT & WHATSAPP BUTTON ONLY) */}
+        {/* ========================================================================= */}
+        <div className="text-center max-w-3xl mx-auto space-y-6 pt-6">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-amber-500/10 rounded-full text-gold-bronze text-[11px] uppercase tracking-widest font-bold justify-center">
+            <Layers className="w-3.5 h-3.5" />
+            <span>Terza Sezione — Custom & Bespoke Projects</span>
+          </div>
+
+          <h3 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-gallery-900 leading-tight">
+            E Tanto Altro: Creazioni su Misura
+          </h3>
+
+          <p className="body-text text-stone-700 leading-relaxed max-w-2xl mx-auto">
+            L'arte di Tanya non si ferma ai vestiti o ai quadri classici: realizza accessori d'autore, giacche personalizzate su disegno del cliente, borse dipinte, dettagli calligrafici e progetti artistici speciali per eventi e collezionisti.
           </p>
+
+          <div className="pt-4">
+            <a
+              href={`https://wa.me/393922603869?text=${waMsgCustom}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary py-4 px-9 bg-emerald-700 hover:bg-emerald-800 text-white text-xs shadow-lg hover:shadow-emerald-900/30"
+            >
+              <MessageCircle className="w-4 h-4 text-emerald-300" />
+              <span>Crea la Tua Idea Contattandomi su WhatsApp</span>
+            </a>
+          </div>
         </div>
 
       </div>
